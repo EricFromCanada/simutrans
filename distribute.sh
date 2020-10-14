@@ -201,9 +201,9 @@ cd simutrans
 if [ "$OST" = "mac" ]; then
   buildOSX
   cd ..
-  ls 
+  ls
   pwd
-  zip -r -9 simumac.zip simutrans
+  zip -r -9 - simutrans > simumac.zip
   cd simutrans
   rm -rf SDL2
   rm -rf simutrans.app
