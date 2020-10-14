@@ -183,6 +183,11 @@ buildOSX()
 	fi
 	echo "APPL????" > "simutrans.app/Contents/PkgInfo"
 	sh ../OSX/plistgen.sh "simutrans.app" "simutrans"
+	if [ ! -d "pak" ]; then
+		curl --progress-bar -L -o "pak.zip" "http://downloads.sourceforge.net/project/simutrans/pak64/122-0/simupak64-122-0.zip"
+		unzip -qoC "pak.zip" -d ..
+		rm -f "pak.zip"
+	fi
 }
 
 # fetch language files
